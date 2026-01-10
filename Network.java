@@ -121,9 +121,15 @@ public class Network {
 
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
+        if (userCount == 0){
+            return "Network:";
+        }
         String answer = "Network:\n";
         for (int i=0; i<userCount; i++){
-            answer += "\n" + users[i].toString();
+            answer += users[i].toString();
+            if (i<userCount-1){
+                answer += "\n";
+            }
         }
         return answer;
     }
